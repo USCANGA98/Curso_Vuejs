@@ -5,12 +5,14 @@ Vue.component('padre', {
         <div class="p-5 bg-dark text-white">
             <h2>Componente padre: {{numeropadre}}</h2>
             <button class="btn btn-danger" @click="numeropadre++">+</button>
-            <hijo :numero="numeropadre"></hijo>
+            {{nombrePadre}}
+            <hijo :numero="numeropadre" @nombreHijo="nombrePadre = $event"></hijo>
         </div>
     `,
     data(){
         return{
-            numeropadre: 0
+            numeropadre: 0,
+            nombrePadre: ''
         }
     }
 })
